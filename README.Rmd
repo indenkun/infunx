@@ -73,7 +73,7 @@ t_test_stats(mean_x = 2, std_x = 1, n_x = 3)
 
 ## License
 
-* GPL (>= 2)
+* GPL-2.0 license
 
 ## Imports packages
 
