@@ -114,9 +114,10 @@ t_test_stats(mean_x = 2, std_x = 1, n_x = 3)
 package. `scale_x_chron()` and `scale_y_chron()` are `{ggplot2}` scales.
 
 It is based on `chron_trans()` and `scale_x_chron()` and
-`scale_y_chron()` from the `{chron}` package. These functions in the
-`{chron}` package have a bug that causes the date and time to be out of
-sync with the time zone if the time zone is not `"GMT"` or `"UTC"`.
+`scale_y_chron()` from the `{chron}` package written by `{chron}`
+package author and maintainer. These functions in the `{chron}` package
+have a bug that causes the date and time to be out of sync with the time
+zone if the time zone is not `"GMT"` or `"UTC"`.
 
 ``` r
 packageVersion("chron")
@@ -148,7 +149,7 @@ Sys.timezone()
 #> [1] "Asia/Tokyo"
 ```
 
-{infunx}’s `scale_x_chron()` solves this problem.
+`{infunx}`’s `scale_x_chron()` solves this problem.
 
 ``` r
 # correct

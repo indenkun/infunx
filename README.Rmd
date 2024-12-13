@@ -95,7 +95,7 @@ This is because the time zone of the execution environment is UTC+0900 and the t
 Sys.timezone()
 ```
 
-{infunx}'s `scale_x_chron()` solves this problem.
+`{infunx}`'s `scale_x_chron()` solves this problem.
 
 ```{r}
 # correct
