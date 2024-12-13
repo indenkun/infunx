@@ -10,7 +10,7 @@
 #' }
 #' @rdname chron_scale
 #' @details
-#' It is based on \code{\link[chron]{chron_trans}} and \code{\link[chron]{scale_x_chron}} and \code{\link[chron]{scale_y_chron}} from the \code{chron} package written by \code{chron} package author and maintainer..
+#' It is based on \code{\link[chron]{chron_trans}} and \code{\link[chron]{scale_x_chron}} and \code{\link[chron]{scale_y_chron}} from the \code{chron} package written by \code{chron} package (version 2.3.61) author and maintainer.
 #'
 #' These functions in the \code{chron} package have a bug that causes the date and time to be out of sync with the time zone if the time zone is not \code{"GMT"} or \code{"UTC"}.
 #' These functions in the \code{infunx} package fix the above bug.

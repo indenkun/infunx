@@ -115,9 +115,9 @@ package. `scale_x_chron()` and `scale_y_chron()` are `{ggplot2}` scales.
 
 It is based on `chron_trans()` and `scale_x_chron()` and
 `scale_y_chron()` from the `{chron}` package written by `{chron}`
-package author and maintainer. These functions in the `{chron}` package
-have a bug that causes the date and time to be out of sync with the time
-zone if the time zone is not `"GMT"` or `"UTC"`.
+package (version 2.3.61) author and maintainer. These functions in the
+`{chron}` package have a bug that causes the date and time to be out of
+sync with the time zone if the time zone is not `"GMT"` or `"UTC"`.
 
 ``` r
 packageVersion("chron")
