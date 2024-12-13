@@ -108,6 +108,57 @@ t_test_stats(mean_x = 2, std_x = 1, n_x = 3)
 #>         2
 ```
 
+### `chron_trans()`, `scale_x_chron`, `scale_y_chron`
+
+`chron_trans()` is a `{ggplot2}` transformer for `chron` in `{chron}`
+package. `scale_x_chron()` and `scale_y_chron()` are `{ggplot2}` scales.
+
+It is based on `chron_trans()` and `scale_x_chron()` and
+`scale_y_chron()` from the `{chron}` package. These functions in the
+`{chron}` package have a bug that causes the date and time to be out of
+sync with the time zone if the time zone is not `"GMT"` or `"UTC"`.
+
+``` r
+packageVersion("chron")
+#> [1] '2.3.61'
+d <- data.frame(time = chron::as.times(paste0(0:23, ":00:00")), 
+                x = 1:24)
+head(d)
+#>       time x
+#> 1 00:00:00 1
+#> 2 01:00:00 2
+#> 3 02:00:00 3
+#> 4 03:00:00 4
+#> 5 04:00:00 5
+#> 6 05:00:00 6
+library(ggplot2)
+# incorrect
+ggplot(d, aes(x = time, y = x)) +
+  geom_point() +
+  chron::scale_x_chron(format = "%H:%M")
+```
+
+<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
+
+This is because the time zone of the execution environment is UTC+0900
+and the time has shifted.
+
+``` r
+Sys.timezone()
+#> [1] "Asia/Tokyo"
+```
+
+{infunx}’s `scale_x_chron()` solves this problem.
+
+``` r
+# correct
+ggplot(d, aes(x = time, y = x)) +
+  geom_point() +
+  infunx::scale_x_chron(format = "%H:%M")
+```
+
+<img src="man/figures/README-unnamed-chunk-7-1.png" width="100%" />
+
 ## License
 
 - GPL-2.0 license
@@ -115,6 +166,12 @@ t_test_stats(mean_x = 2, std_x = 1, n_x = 3)
 ## Imports packages
 
 - `{stats}`
+
+## Suggests Packages
+
+- `{chron}`
+- `{ggplot2}`
+- `{scales}`
 
 ## Notice
 
